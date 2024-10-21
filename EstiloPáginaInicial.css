@@ -1,0 +1,98 @@
+/* Estilização geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilização do cabeçalho */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+  }
+  
+  /* Estilização do logotipo */
+  header .logo img {
+    height: 80px; /* Tamanho do logotipo */
+    width: 170px;
+  }
+  
+  /* Estilização da navegação */
+  header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  header nav ul li {
+    margin: 0 15px;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+  }
+  
+  header nav ul li a:hover {
+    color: DeepSkyBlue; /* Cor ao passar o mouse sobre o link */
+  }
+  
+  /* Estilização dos ícones e botões no cabeçalho */
+  header .header-icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  header .header-icons a {
+    margin-left: 20px;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+  }
+  
+  header .header-icons img {
+    height: 24px; /* Tamanho do ícone de busca */
+    filter: invert(100%);
+  }
+  
+  header .header-icons .button {
+    background-color: DeepSkyBlue;
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header .header-icons .button:hover {
+    background-color: rgb(0, 140, 255); /* Cor do botão ao passar o mouse */
+  }
+  
+  /* Clearfix para garantir que o header expanda corretamente */
+  .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:260px;
+    border-radius: 35px;
+  }
+
+.input-color{
+  color: white;
+}
