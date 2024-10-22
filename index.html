@@ -7,7 +7,7 @@
   <title>WA - Alagamentos</title>
   <link rel="stylesheet" href="EstiloPáginaInicial.css">
 </head>
-<body>
+<body class="bodyAlagamento">
 
   <!-- Cabeçalho -->
   <header>
@@ -15,11 +15,11 @@
       <img src="logocerto.png" alt="Logo do Site">
     </div>
     <nav>
-      <ul>
-        <li><a href="Home.html">Home</a></li>
-        <li><a href="index.html">Alagamentos</a></li>
-        <li><a href="Outros.html">Outros</a></li>
-      </ul>
+   
+  <a href="Home.html">Home</a>
+  <a href="index.html">Alagamentos</a>
+  <a href="Outros.html">Outros</a>
+
     </nav>
     <div class="header-icons clearfix">
       <input type="text" id="txtBusca" placeholder="Buscar..." class="input-color"/>
@@ -29,11 +29,15 @@
   </header>
 
   <main>
+    
     <!-- Exibição das leituras do sensor -->
     <h1 id="leituraSensor">Aguardando leitura...</h1>
+   <center>
+
+     <span class="carregamento">
+    </span>
+  </center>
   </main>
 
-<script src="atualizaleituras.js></script>
-  
 </body>
 </html>
