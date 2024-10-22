@@ -4,221 +4,189 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    min-height: 100vh;  
-}
-
-/* Estilização do cabeçalho */
-header {
+  min-height: 100vh;  
+  
+  }
+  
+  /* Estilização do cabeçalho */
+  header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #333;
     padding: 10px 20px;
     color: white;
-}
-
-/* Estilização do logotipo */
-header .logo img {
+  }
+  
+  /* Estilização do logotipo */
+  header .logo img {
     height: 80px; /* Tamanho do logotipo */
     width: 170px;
-}
-
-/* Estilização dos ícones e botões no cabeçalho */
-header .header-icons {
+  }
+  
+  
+  /* Estilização dos ícones e botões no cabeçalho */
+  header .header-icons {
     display: flex;
     align-items: center;
-}
-
-header .header-icons a {
+  }
+  
+  header .header-icons a {
     margin-left: 20px;
     color: white;
     font-size: 22px;
     text-decoration: none;
-}
-
-header .header-icons img {
+  }
+  
+  header .header-icons img {
     height: 24px; /* Tamanho do ícone de busca */
     filter: invert(100%);
-}
-
-header .header-icons .button {
+  }
+  
+  header .header-icons .button {
     background-color: DeepSkyBlue;
     padding: 8px 15px;
     border-radius: 4px;
     color: white;
     text-decoration: none;
     font-weight: bold;
-}
-
-header .header-icons .button:hover {
+  }
+  
+  header .header-icons .button:hover {
     background-color: rgb(0, 140, 255); /* Cor do botão ao passar o mouse */
-}
-
-/* Clearfix para garantir que o header expanda corretamente */
-.clearfix::after {
+  }
+  
+  /* Clearfix para garantir que o header expanda corretamente */
+  .clearfix::after {
     content: "";
     display: table;
     clear: both;
-}
+  }
 
-#txtBusca{
-    float: left;
-    background-color: transparent;
-    padding-left: 5px;
-    font-style: italic;
-    font-size: 18px;
-    border: none;
-    height: 32px;
-    width: 260px;
+  #txtBusca{
+    float:left;
+    background-color:transparent;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    height:32px;
+    width:260px;
     border-radius: 35px;
-}
+  }
 
 .input-color{
-    color: white;
+  color: white;
 }
 
-/* Estilização da navegação */
-nav {
-    text-align: center;
-    margin-top: 20px;
+
+
+/* começo do codigo das linhas de baixo dos links */
+nav{
+text-align: center;
+margin-top:20px;
+
+}
+nav a{
+color:white;
+text-decoration: none;
+padding:0px 50px 10px 0;
+font-size: 25pt;
+position:relative;
+
+
+}
+nav a::after{
+content:" ";
+width: 0%;
+height: 7%;
+background-color: rgb(255, 255, 255);
+position:absolute;
+bottom:0;
+left:0;
+transition: 0.5s ease-in-out;
+font-size:10px;
+
+
+}
+nav a:hover::after{
+width: 100%;
+
+}
+/* finaldo codigo das linhas de baixo dos links */
+
+/*começo da rodinha de carregamento da parte de alagamento */
+.bodyAlagamento{
+  width: 100%;
+  min-height: 100vh;  
+  align-items: center;
+  justify-content: center;
+
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 0px 50px 10px 0;
-    font-size: 25pt;
-    position: relative;
+span.carregamento{
+  width: 60px;
+  height:60px;
+  background-color: transparent;
+  display:block;  
+  border:12px solid rgb(20, 207, 220);
+  border-top: 12px solid transparent;
+  border-radius: 50%;
+
+  animation: loading 1s linear infinite;
+
+}
+@keyframes loading{
+0%{
+  transform: rotate(0deg);
+}
+100%{
+  transform: rotate(360deg);
+}
+}
+/*fim da rodinha de carregamento da parte de alagamento */
+
+
+.bodyHome{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+}
+.degrade{
+  width: 100%;
+  padding:300px 0;
+  display:flex ;
+align-items: center;
+justify-content: center;
+background-image: linear-gradient(to left,blue,orange,yellow,red,purple);
+background-size: 500% 100%;
+animation:degrade-animado 5s infinite alternate;
+
+}
+@keyframes degrade-animado{
+0%{
+background-position-x:0% ;
+
+
+}
+100%{
+  background-position-x:100% ;
 }
 
-nav a::after {
-    content: " ";
-    width: 0%;
-    height: 7%;
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: 0.5s ease-in-out;
-}
 
-nav a:hover::after {
-    width: 100%;
 }
+.divLogin{
+background-color:rgba(0,0,0,0.8 );
 
-/* Responsividade para diferentes dispositivos */
-@media (max-width: 1200px) {
-    header .logo img {
-        height: 70px;
-        width: 150px;
-    }
-    
-    nav a {
-        font-size: 22pt;
-        padding: 0px 30px 10px 0;
-    }
+
+
 }
+.login_LOGIN  {
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    header .logo img {
-        height: 60px;
-        width: 130px;
-    }
-    
-    header .header-icons {
-        margin-top: 10px;
-    }
-    
-    header .header-icons a {
-        font-size: 18px;
-        margin-left: 15px;
-    }
-    
-    nav a {
-        font-size: 20pt;
-        padding: 0px 20px 10px 0;
-    }
-}
+color:white
 
-@media (max-width: 480px) {
-    header .logo img {
-        height: 50px;
-        width: 100px;
-    }
-    
-    header .header-icons a {
-        font-size: 16px;
-        margin-left: 10px;
-    }
-    
-    nav a {
-        font-size: 18pt;
-        padding: 0px 15px 10px 0;
-    }
-    
-    #txtBusca {
-        width: 200px;
-        font-size: 16px;
-    }
-}
-
-/* Estilização da roda de carregamento */
-.bodyAlagamento {
-    width: 100%;
-    min-height: 100vh;  
-    align-items: center;
-    justify-content: center;
-}
-
-span.carregamento {
-    width: 60px;
-    height: 60px;
-    background-color: transparent;
-    display: block;  
-    border: 12px solid rgb(20, 207, 220);
-    border-top: 12px solid transparent;
-    border-radius: 50%;
-    animation: loading 1s linear infinite;
-}
-
-@keyframes loading {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-/* Estilização da home */
-.bodyHome {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.degrade {
-    width: 100%;
-    padding: 300px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to left, blue, orange, yellow, red, purple);
-    background-size: 500% 100%;
-    animation: degrade-animado 5s infinite alternate;
-}
-
-@keyframes degrade-animado {
-    0% {
-        background-position-x: 0%;
-    }
-    100% {
-        background-position-x: 100%;
-    }
 }
