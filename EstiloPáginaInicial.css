@@ -162,7 +162,7 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display:flex ;
 align-items: center;
 justify-content: center;
-background-image: linear-gradient(to left,blue,orange,yellow,red,purple);
+background-image: linear-gradient(to left,blue,rgb(0, 121, 158),rgb(0, 158, 206),rgb(0, 224, 224),rgb(0, 255, 255),rgb(0, 224, 224),rgb(0, 158, 206),rgb(0, 121, 158),blue);
 background-size: 500% 100%;
 animation:degrade-animado 5s infinite alternate;
 
@@ -181,12 +181,60 @@ background-position-x:0% ;
 }
 .divLogin{
 background-color:rgba(0,0,0,0.8 );
+border-radius: 10px;
+padding: 80px;
 
+input{
+  border-radius: 10px;
+width: 100%;
+padding:5px
+
+  }
+button{
+  padding:8px;
+  width: 100%;
+
+  border-radius: 10px;
+  
+}
 
 
 }
 .login_LOGIN  {
+transform: translate(27%);
+color:white;
 
-color:white
+
+
+
+}
+.bodyLogin{
+ 
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.degradeEnviar{
+  width: 100%;
+  padding:300px 0;
+  display:flex ;
+align-items: center;
+justify-content: center;
+background-image: linear-gradient(to left,blue,orange,yellow,red,purple);
+background-size: 500% 100%;
+animation:degrade-animado 5s infinite alternate;
+
+}
+@keyframes degrade-animado{
+0%{
+background-position-x:0% ;
+
+
+}
+100%{
+  background-position-x:100% ;
+}
+
+
 
 }
