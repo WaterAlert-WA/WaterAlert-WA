@@ -1,235 +1,272 @@
 /* Estilização geral */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100vh;  
-  box-sizing: border-box;
-  background-color: #f5f5f5; /* Cor de fundo mais suave */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;  
 }
 
 /* Estilização do cabeçalho */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 20px;
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
 }
 
+/* Estilização do logotipo */
 header .logo img {
-  height: 60px; /* Ajuste o tamanho do logotipo para ser mais responsivo */
-  width: auto;
+    height: 80px; /* Tamanho do logotipo */
+    width: 170px;
 }
 
+/* Estilização dos ícones e botões no cabeçalho */
 header .header-icons {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 header .header-icons a {
-  margin-left: 15px;
-  color: white;
-  font-size: 20px;
-  text-decoration: none;
-  transition: color 0.3s;
+    margin-left: 20px;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
 }
 
-header .header-icons a:hover {
-  color: DeepSkyBlue; /* Cor de destaque ao passar o mouse */
+header .header-icons img {
+    height: 24px; /* Tamanho do ícone de busca */
+    filter: invert(100%);
 }
 
 header .header-icons .button {
-  background-color: DeepSkyBlue;
-  padding: 8px 15px;
-  border-radius: 4px;
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+    background-color: DeepSkyBlue;
+    padding: 8px 15px;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 header .header-icons .button:hover {
-  background-color: rgb(0, 140, 255); /* Cor do botão ao passar o mouse */
+    background-color: rgb(0, 140, 255); /* Cor do botão ao passar o mouse */
 }
 
-/* Input de busca */
+/* Clearfix para garantir que o header expanda corretamente */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 #txtBusca {
-  float: left;
-  background-color: transparent;
-  padding-left: 10px;
-  font-style: italic;
-  font-size: 18px;
-  border: none;
-  height: 32px;
-  width: 260px;
-  border-radius: 35px;
-  color: white;
+    float: left;
+    background-color: transparent;
+    padding-left: 5px;
+    font-style: italic;
+    font-size: 18px;
+    border: none;
+    height: 32px;
+    width: 260px;
+    border-radius: 35px;
+}
+
+.input-color {
+    color: white;
 }
 
 /* Estilização da navegação */
 nav {
-  text-align: center;
-  margin-top: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0px 50px 10px 0;
-  font-size: 20px;
-  position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 0px 50px 10px 0;
+    font-size: 25pt;
+    position: relative;
 }
 
 nav a::after {
-  content: " ";
-  width: 0%;
-  height: 2px;
-  background-color: white;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: width 0.5s ease-in-out;
+    content: " ";
+    width: 0%;
+    height: 7%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
 }
 
 nav a:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
-/* Rodinha de carregamento */
+/* Responsividade para diferentes dispositivos */
+@media (max-width: 1200px) {
+    header .logo img {
+        height: 70px;
+        width: 150px;
+    }
+    
+    nav a {
+        font-size: 22pt;
+        padding: 0px 30px 10px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    header .logo img {
+        height: 60px;
+        width: 130px;
+    }
+    
+    header .header-icons {
+        margin-top: 10px;
+    }
+    
+    header .header-icons a {
+        font-size: 18px;
+        margin-left: 15px;
+    }
+    
+    nav a {
+        font-size: 20pt;
+        padding: 0px 20px 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo img {
+        height: 50px;
+        width: 100px;
+    }
+    
+    header .header-icons a {
+        font-size: 16px;
+        margin-left: 10px;
+    }
+    
+    nav a {
+        font-size: 18pt;
+        padding: 0px 15px 10px 0;
+    }
+    
+    #txtBusca {
+        width: 200px;
+        font-size: 16px;
+    }
+}
+
+/* Estilização da roda de carregamento */
 .bodyAlagamento {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    min-height: 100vh;  
+    align-items: center;
+    justify-content: center;
 }
 
 span.carregamento {
-  width: 60px;
-  height: 60px;
-  border: 12px solid rgb(20, 207, 220);
-  border-top: 12px solid transparent;
-  border-radius: 50%;
-  animation: loading 1s linear infinite;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    display: block;  
+    border: 12px solid rgb(20, 207, 220);
+    border-top: 12px solid transparent;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
 }
 
 @keyframes loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-/* Estilo Home */
+/* Estilização da home */
 .bodyHome {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .degrade {
-  width: 100%;
-  padding: 12.4% 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(to left, blue, rgb(0, 121, 158), rgb(0, 158, 206), rgb(0, 224, 224));
-  background-size: 500% 100%;
-  animation: degrade-animado 5s infinite alternate;
+    width: 100%;
+    padding: 12.4% 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left, blue, rgb(0, 121, 158), rgb(0, 158, 206), rgb(0, 224, 224), rgb(0, 255, 255), rgb(0, 224, 224), rgb(0, 158, 206), rgb(0, 121, 158), blue);
+    background-size: 500% 100%;
+    animation: degrade-animado 5s infinite alternate;
 }
 
 @keyframes degrade-animado {
-  0% {
-    background-position-x: 0%;
-  }
-  100% {
-    background-position-x: 100%;
-  }
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 100%;
+    }
 }
 
-/* Formulário de Login */
 .divLogin {
-  background-color: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  padding: 40px;
-  width: 90%;
-  max-width: 400px;
-  margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 80px;
 }
 
 .divLogin input {
-  border-radius: 10px;
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
+    border-radius: 10px;
+    width: 100%;
+    padding: 5px;
 }
 
 .divLogin button {
-  padding: 10px;
-  width: 100%;
-  background-color: DeepSkyBlue;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
+    padding: 8px;
+    width: 100%;
+    border-radius: 10px;
 }
 
-.divLogin button:hover {
-  background-color: rgb(0, 140, 255);
+.login_LOGIN {
+    transform: translate(27%);
+    color: white;
 }
 
-/* Animação de fundo do botão enviar */
+.bodyLogin {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .degradeEnviar {
-  width: 100%;
-  padding: 300px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(to left, blue, orange, yellow, red, purple);
-  background-size: 500% 100%;
-  animation: degrade-animado 5s infinite alternate;
+    width: 100%;
+    padding: 300px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left, blue, orange, yellow, red, purple);
+    background-size: 500% 100%;
+    animation: degrade-animado 5s infinite alternate;
 }
 
-/* MEDIA QUERIES para telas menores */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    padding: 15px;
-  }
-
-  header .logo img {
-    height: 50px;
-  }
-
-  nav a {
-    padding: 0px 20px 10px 0;
-    font-size: 18px;
-  }
-
-  #txtBusca {
-    width: 180px;
-    font-size: 16px;
-  }
-
-  .divLogin {
-    padding: 40px 20px;
-  }
-
-  .degrade {
-    padding: 30% 0;
-  }
-
-  .header-icons a, .header-icons .button {
-    font-size: 16px;
-    margin-left: 10px;
-  }
+@keyframes degrade-animado {
+    0% {
+        background-position-x: 0%;
+    }
+    100% {
+        background-position-x: 100%;
+    }
 }
