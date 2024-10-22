@@ -3,6 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    width: 100%;
+  min-height: 100vh;  
+  
   }
   
   /* Estilização do cabeçalho */
@@ -21,27 +24,6 @@ body {
     width: 170px;
   }
   
-  /* Estilização da navegação */
-  header nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  header nav ul li {
-    margin: 0 15px;
-  }
-  
-  header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
-  }
-  
-  header nav ul li a:hover {
-    color: DeepSkyBlue; /* Cor ao passar o mouse sobre o link */
-  }
   
   /* Estilização dos ícones e botões no cabeçalho */
   header .header-icons {
@@ -95,4 +77,105 @@ body {
 
 .input-color{
   color: white;
+}
+
+
+
+/* começo do codigo das linhas de baixo dos links */
+nav{
+text-align: center;
+margin-top:20px;
+
+}
+nav a{
+color:white;
+text-decoration: none;
+padding:0px 50px 10px 0;
+font-size: 25pt;
+position:relative;
+
+
+}
+nav a::after{
+content:" ";
+width: 0%;
+height: 7%;
+background-color: rgb(255, 255, 255);
+position:absolute;
+bottom:0;
+left:0;
+transition: 0.5s ease-in-out;
+font-size:10px;
+
+
+}
+nav a:hover::after{
+width: 100%;
+
+}
+/* finaldo codigo das linhas de baixo dos links */
+
+/*começo da rodinha de carregamento da parte de alagamento */
+.bodyAlagamento{
+  width: 100%;
+  min-height: 100vh;  
+  align-items: center;
+  justify-content: center;
+
+}
+
+span.carregamento{
+  width: 60px;
+  height:60px;
+  background-color: transparent;
+  display:block;  
+  border:12px solid rgb(20, 207, 220);
+  border-top: 12px solid transparent;
+  border-radius: 50%;
+
+  animation: loading 1s linear infinite;
+
+}
+@keyframes loading{
+0%{
+  transform: rotate(0deg);
+}
+100%{
+  transform: rotate(360deg);
+}
+}
+/*fim da rodinha de carregamento da parte de alagamento */
+
+
+.bodyHome{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+}
+.degrade{
+  width: 100%;
+  padding:300px 0;
+  display:flex ;
+align-items: center;
+justify-content: center;
+background-image: linear-gradient(to left,blue,orange,yellow,red,purple);
+background-size: 500% 100%;
+animation:degrade-animado 5s infinite alternate;
+
+}
+@keyframes degrade-animado{
+0%{
+background-position-x:0% ;
+
+
+}
+100%{
+  background-position-x:100% ;
+}
+
+
 }
