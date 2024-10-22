@@ -1,240 +1,271 @@
 /* Estilização geral */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    width: 100%;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
   min-height: 100vh;  
-  
-  }
-  
-  /* Estilização do cabeçalho */
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 10px 20px;
-    color: white;
-  }
-  
-  /* Estilização do logotipo */
-  header .logo img {
-    height: 80px; /* Tamanho do logotipo */
-    width: 170px;
-  }
-  
-  
-  /* Estilização dos ícones e botões no cabeçalho */
-  header .header-icons {
-    display: flex;
-    align-items: center;
-  }
-  
-  header .header-icons a {
-    margin-left: 20px;
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
-  }
-  
-  header .header-icons img {
-    height: 24px; /* Tamanho do ícone de busca */
-    filter: invert(100%);
-  }
-  
-  header .header-icons .button {
-    background-color: DeepSkyBlue;
-    padding: 8px 15px;
-    border-radius: 4px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  header .header-icons .button:hover {
-    background-color: rgb(0, 140, 255); /* Cor do botão ao passar o mouse */
-  }
-  
-  /* Clearfix para garantir que o header expanda corretamente */
-  .clearfix::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
 
-  #txtBusca{
-    float:left;
-    background-color:transparent;
-    padding-left:5px;
-    font-style:italic;
-    font-size:18px;
-    border:none;
-    height:32px;
-    width:260px;
-    border-radius: 35px;
-  }
-
-.input-color{
+/* Estilização do cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 15px 30px;
   color: white;
 }
 
-
-
-/* começo do codigo das linhas de baixo dos links */
-nav{
-text-align: center;
-margin-top:20px;
-
+header .logo img {
+  height: 60px;
+  width: auto;
 }
-nav a{
-color:white;
-text-decoration: none;
-padding:0px 50px 10px 0;
-font-size: 25pt;
-position:relative;
 
-
-}
-nav a::after{
-content:" ";
-width: 0%;
-height: 7%;
-background-color: rgb(255, 255, 255);
-position:absolute;
-bottom:0;
-left:0;
-transition: 0.5s ease-in-out;
-font-size:10px;
-
-
-}
-nav a:hover::after{
-width: 100%;
-
-}
-/* finaldo codigo das linhas de baixo dos links */
-
-/*começo da rodinha de carregamento da parte de alagamento */
-.bodyAlagamento{
-  width: 100%;
-  min-height: 100vh;  
+/* Ícones e botões no cabeçalho */
+header .header-icons {
+  display: flex;
   align-items: center;
-  justify-content: center;
-
 }
 
-span.carregamento{
-  width: 60px;
-  height:60px;
+header .header-icons a {
+  margin-left: 15px;
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+header .header-icons a:hover {
+  color: #00aaff;
+}
+
+header .header-icons img {
+  height: 24px;
+  filter: invert(100%);
+}
+
+header .header-icons .button {
+  background-color: DeepSkyBlue;
+  padding: 10px 20px;
+  border-radius: 4px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 15px;
+  transition: background-color 0.3s ease;
+}
+
+header .header-icons .button:hover {
+  background-color: #0090ff;
+}
+
+/* Clearfix para garantir que o header expanda corretamente */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Campo de busca */
+#txtBusca {
   background-color: transparent;
-  display:block;  
-  border:12px solid rgb(20, 207, 220);
+  padding-left: 10px;
+  font-style: italic;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 35px;
+  width: 260px;
+  border-radius: 35px;
+  outline: none;
+  color: #333;
+  transition: border-color 0.3s ease;
+}
+
+#txtBusca:focus {
+  border-color: #00aaff;
+}
+
+/* Links de navegação com linhas de destaque */
+nav {
+  text-align: center;
+  margin-top: 20px;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+  padding: 0px 40px 10px;
+  font-size: 20pt;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #00aaff;
+}
+
+nav a::after {
+  content: " ";
+  width: 0%;
+  height: 3px;
+  background-color: #00aaff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: width 0.5s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Animação de carregamento */
+.bodyAlagamento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+span.carregamento {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  display: block;
+  border: 12px solid rgb(20, 207, 220);
   border-top: 12px solid transparent;
   border-radius: 50%;
-
   animation: loading 1s linear infinite;
-
-}
-@keyframes loading{
-0%{
-  transform: rotate(0deg);
-}
-100%{
-  transform: rotate(360deg);
-}
-}
-/*fim da rodinha de carregamento da parte de alagamento */
-
-
-.bodyHome{
-margin:0;
-padding:0;
-box-sizing: border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-
-
-}
-.degrade{
-  width: 100%;
-  padding:12.4% 0;
-  display:flex ;
-align-items: center;
-justify-content: center;
-background-image: linear-gradient(to left,blue,rgb(0, 121, 158),rgb(0, 158, 206),rgb(0, 224, 224),rgb(0, 255, 255),rgb(0, 224, 224),rgb(0, 158, 206),rgb(0, 121, 158),blue);
-background-size: 500% 100%;
-animation:degrade-animado 5s infinite alternate;
-
-}
-@keyframes degrade-animado{
-0%{
-background-position-x:0% ;
-
-
-}
-100%{
-  background-position-x:100% ;
 }
 
-
-}
-.divLogin{
-background-color:rgba(0,0,0,0.8 );
-border-radius: 10px;
-padding: 80px;
-
-input{
-  border-radius: 10px;
-width: 100%;
-padding:5px
-
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
   }
-button{
-  padding:8px;
-  width: 100%;
-
-  border-radius: 10px;
-  
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-
-}
-.login_LOGIN  {
-transform: translate(27%);
-color:white;
-
-
-
-
-}
-.bodyLogin{
- 
+/* Estilo da home */
+.bodyHome {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
-.degradeEnviar{
+
+.degrade {
   width: 100%;
-  padding:300px 0;
-  display:flex ;
-align-items: center;
-justify-content: center;
-background-image: linear-gradient(to left,blue,orange,yellow,red,purple);
-background-size: 500% 100%;
-animation:degrade-animado 5s infinite alternate;
-
-}
-@keyframes degrade-animado{
-0%{
-background-position-x:0% ;
-
-
-}
-100%{
-  background-position-x:100% ;
+  padding: 12.4% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to left, blue, rgb(0, 121, 158), rgb(0, 158, 206), rgb(0, 224, 224), rgb(0, 255, 255));
+  background-size: 500% 100%;
+  animation: degrade-animado 5s infinite alternate;
 }
 
+@keyframes degrade-animado {
+  0% {
+    background-position-x: 0%;
+  }
+  100% {
+    background-position-x: 100%;
+  }
+}
 
+/* Estilo da tela de login */
+.divLogin {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 40px;
+  width: 90%;
+  max-width: 400px;
+  margin: 50px auto;
+}
 
+.divLogin input {
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  outline: none;
+}
+
+.divLogin button {
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: DeepSkyBlue;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.divLogin button:hover {
+  background-color: #0090ff;
+}
+
+.login_LOGIN {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+}
+
+/* Degrade animado para a tela de envio */
+.degradeEnviar {
+  width: 100%;
+  padding: 300px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(to left, blue, orange, yellow, red, purple);
+  background-size: 500% 100%;
+  animation: degrade-animado 5s infinite alternate;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+
+  header .logo img {
+    height: 50px;
+  }
+
+  header .header-icons .button {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  #txtBusca {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  nav a {
+    font-size: 18pt;
+    padding: 0px 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav a {
+    font-size: 16pt;
+    padding: 0px 10px 10px;
+  }
+
+  .divLogin {
+    padding: 30px;
+  }
 }
