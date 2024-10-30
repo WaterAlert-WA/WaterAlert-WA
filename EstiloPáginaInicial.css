@@ -48,10 +48,20 @@ header .header-icons .button {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: 0px 4px white;
+}
+
+.button:active {
+    transform: translateY(0);
 }
 
 header .header-icons .button:hover {
     background-color: rgb(0, 140, 255); /* Cor do botão ao passar o mouse */
+    transform: translateY(0.33em);
+}
+
+header .header-icons .button:active {
+    transform: translateY(0);
 }
 
 /* Clearfix para garantir que o header expanda corretamente */
@@ -61,26 +71,24 @@ header .header-icons .button:hover {
     clear: both;
 }
 
-#txtBusca {
+#txtBusca{
     float: left;
     background-color: transparent;
-    padding-left: 5px;
+    padding-left: 10px;
     font-style: italic;
     font-size: 18px;
-    border: none;
-    height: 32px;
-    width: 260px;
-    border-radius: 35px;
+    height: 36px;
+    width: 280px;
+    border-radius: 5px;
 }
 
-.input-color {
+.input-color{
     color: white;
 }
 
 /* Estilização da navegação */
 nav {
     text-align: center;
-    margin-top: 20px;
 }
 
 nav a {
@@ -98,8 +106,8 @@ nav a::after {
     background-color: rgb(255, 255, 255);
     position: absolute;
     bottom: 0;
-    left: 0;
-    transition: 0.5s ease-in-out;
+    left: -20px;
+    transition: 1s ease-in-out;
 }
 
 nav a:hover::after {
@@ -169,19 +177,33 @@ nav a:hover::after {
 
 /* Estilização da roda de carregamento */
 .bodyAlagamento {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
     min-height: 100vh;  
     align-items: center;
     justify-content: center;
+    color: white;
+    background-image: linear-gradient(to left, blue, rgb(5, 119, 226), rgb(0, 174, 255));
+    background-size: 500% 100%;
+    animation: degrade-animado 5s infinite alternate;
+}
+
+.bodyAlagamento h1{
+    margin-left: 20px;
+    font-size: 38px;
 }
 
 span.carregamento {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background-color: transparent;
-    display: block;  
-    border: 12px solid rgb(20, 207, 220);
-    border-top: 12px solid transparent;
+    display: flex; 
+    margin-top: 220px; 
+    border: 15px solid rgb(20, 207, 220);
+    border-top: 15px solid  transparent;
     border-radius: 50%;
     animation: loading 1s linear infinite;
 }
@@ -203,64 +225,33 @@ span.carregamento {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.degrade {
-    width: 100%;
-    padding: 12.4% 0;
+
+.container{
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to left, blue, rgb(0, 121, 158), rgb(0, 158, 206), rgb(0, 224, 224), rgb(0, 255, 255), rgb(0, 224, 224), rgb(0, 158, 206), rgb(0, 121, 158), blue);
-    background-size: 500% 100%;
-    animation: degrade-animado 5s infinite alternate;
-}
-
-@keyframes degrade-animado {
-    0% {
-        background-position-x: 0%;
-    }
-    100% {
-        background-position-x: 100%;
-    }
-}
-
-.divLogin {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-    padding: 80px;
-}
-
-.divLogin input {
-    border-radius: 10px;
-    width: 100%;
-    padding: 5px;
-}
-
-.divLogin button {
-    padding: 8px;
-    width: 100%;
-    border-radius: 10px;
-}
-
-.login_LOGIN {
-    transform: translate(27%);
+    height: 91.4vh;
     color: white;
-}
-
-.bodyLogin {
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.degradeEnviar {
-    width: 100%;
-    padding: 300px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: linear-gradient(to left, blue, orange, yellow, red, purple);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: linear-gradient(to left, blue, rgb(0, 204, 255), rgb(140, 0, 255));
     background-size: 500% 100%;
     animation: degrade-animado 5s infinite alternate;
 }
+
+.container .div1 {
+    width: 70%;
+   /* border: 2px solid black;*/
+    padding: 0px 0px 20px 20px;
+    font-size: 24px;
+}
+
+.container .div2 {
+    width: 30%;
+    padding: 20 0px;
+   /* border: 2px solid black;*/
+   font-size: 36px;
+   line-height: 50px;
+   text-align: center;
+}
+
 
 @keyframes degrade-animado {
     0% {
@@ -269,4 +260,3 @@ span.carregamento {
     100% {
         background-position-x: 100%;
     }
-}
