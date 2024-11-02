@@ -8,7 +8,7 @@
             document.getElementById('leituraSensor').innerText = data + ' cm';
           })
           .catch(error => console.error('Erro ao buscar os dados:', error));
-      }, 1000); // Atualiza a cada 2 segundos
+      }, 50); // Atualiza a cada 2 segundos
     }
 
     // Inicia a função assim que a página carregar
