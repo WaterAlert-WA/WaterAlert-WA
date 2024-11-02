@@ -2,7 +2,7 @@
     function atualizarLeitura() {
       setInterval(function() {
         // Faz uma requisição Ajax para buscar os dados do PHP
-        fetch('file:///C:/xampp/htdocs/Site/RecebeDados.php')
+        fetch('http://localhost/Site/RecebeDados.php')
           .then(response => response.text())
           .then(data => {
             document.getElementById('leituraSensor').innerText = data + ' cm';
